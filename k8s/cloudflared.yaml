@@ -1,0 +1,33 @@
+# Cloudflare 快速通道：免路由器、免公網 IP，給一個公開 HTTPS 網址讓外網任何人可連。
+# 注意：quick tunnel 的網址是隨機的，pod 重啟會換網址。要固定網址需改用 named tunnel（Cloudflare 帳號 + token）。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudflared
+  namespace: moogielly
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloudflared
+  template:
+    metadata:
+      labels:
+        app: cloudflared
+    spec:
+      containers:
+        - name: cloudflared
+          image: cloudflare/cloudflared:latest
+          args:
+            - tunnel
+            - --no-autoupdate
+            - --protocol
+            - http2
+            - --url
+            - http://moogielly:80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 24Mi
+            limits:
+              memory: 64Mi
