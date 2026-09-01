@@ -56,6 +56,18 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+    # 主要名稱：需在各裝置 /etc/hosts 或區網 DNS 指到 192.168.1.115
+    - host: moogielly.nip.io
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: moogielly
+                port:
+                  number: 80
+    # 備援：IP 內嵌的 nip.io（公開 DNS 直接可解析）
     - host: moogielly.192.168.1.115.nip.io
       http:
         paths:
