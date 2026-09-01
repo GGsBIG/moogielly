@@ -163,9 +163,177 @@
   line-height: 1.7;
 }
 
+/* SCORES */
+.scoreList {
+  background: #fff;
+  padding: 20px 28px;
+  border: 1px solid var(--line);
+}
+
+.scoreRow {
+  display: grid;
+  grid-template-columns: 130px 1fr 42px;
+  align-items: center;
+  gap: 16px;
+  padding: 9px 0;
+}
+
+.scoreLabel {
+  font-size: 14px;
+  color: var(--black);
+}
+
+.scoreBar {
+  height: 10px;
+  background: var(--purple-light);
+  overflow: hidden;
+}
+
+.scoreFill {
+  display: block;
+  height: 100%;
+  background: var(--purple);
+}
+
+.scoreVal {
+  text-align: right;
+  font-weight: 700;
+  color: var(--purple-dark);
+  font-size: 14px;
+}
+
+.scoreNote {
+  margin: 14px 0 0;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+/* DECADE / DANGER / GIVE CARDS (共用兩欄) */
+.decadeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.decadeCard,
+.dangerCard,
+.giveCard {
+  background: #fff;
+  padding: 26px 28px;
+}
+
+.decadeCard {
+  border-top: 4px solid var(--purple);
+}
+
+.decadeCard h3,
+.giveCard h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+}
+
+.decadeRange {
+  margin: 0 0 12px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.decadeCard p:last-child,
+.dangerCard p {
+  margin: 0;
+  color: #555;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+.dangerCard {
+  border-top: 4px solid #b02a1f;
+}
+
+.dangerWho {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #b02a1f;
+  margin-bottom: 8px;
+}
+
+.dangerCard h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+}
+
+.giveCard {
+  border-top: 4px solid #2e9e5b;
+}
+
+.giveCard ul {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.giveCard li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--line);
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+.giveCard li:last-child {
+  border-bottom: none;
+}
+
+.giveCard strong {
+  display: inline-block;
+  min-width: 48px;
+  margin-right: 8px;
+  color: #2e9e5b;
+}
+
+/* RULE BOX */
+.ruleBox {
+  margin-top: 12px;
+  background: var(--purple-light);
+  border-left: 5px solid var(--purple);
+  padding: 24px 28px;
+}
+
+.ruleBox h3 {
+  margin: 0 0 10px;
+  font-size: 19px;
+  color: var(--purple-dark);
+}
+
+.ruleBox p {
+  margin: 0;
+  color: #444;
+  line-height: 1.95;
+  font-size: 15px;
+}
+
+/* QUOTE */
+.cpQuote {
+  margin: 36px 0 0;
+  padding: 24px 0 0;
+  border-top: 1px solid #444;
+  max-width: 760px;
+  font-size: clamp(18px, 2.6vw, 24px);
+  line-height: 1.7;
+  color: #fff;
+  font-weight: 600;
+}
+
 @media (max-width: 720px) {
-  .adviceGrid {
+  .adviceGrid,
+  .decadeGrid {
     grid-template-columns: 1fr;
+  }
+  .scoreRow {
+    grid-template-columns: 96px 1fr 34px;
+    gap: 10px;
   }
   .cpVerdict {
     padding: 40px 24px;

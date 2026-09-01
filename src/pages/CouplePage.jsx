@@ -1,4 +1,16 @@
-import { intro, highlights, advice, verdict } from '../data/couple'
+import {
+  intro,
+  highlights,
+  scores,
+  scoresNote,
+  decades,
+  dangers,
+  conflict,
+  gives,
+  advice,
+  verdict,
+  quote,
+} from '../data/couple'
 import '../styles/CouplePage.css'
 
 export default function CouplePage() {
@@ -27,7 +39,7 @@ export default function CouplePage() {
               <p className="sectionNumber">合盤重點</p>
               <h2>兩張盤怎麼咬合</h2>
             </div>
-            <p>綠色加分 · 橘色留意 · 紅色課題</p>
+            <p>綠色加分 · 橘色留意</p>
           </div>
           <div className="hlList">
             {highlights.map((h) => (
@@ -41,6 +53,98 @@ export default function CouplePage() {
                 <span className="hlTag">{h.tag}</span>
                 <h3>{h.title}</h3>
                 <p>{h.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <div className="sectionHeading">
+            <div>
+              <p className="sectionNumber">象徵評分</p>
+              <h2>各面向合度</h2>
+            </div>
+            <p>非科學分數，方便快速理解</p>
+          </div>
+          <div className="scoreList">
+            {scores.map((s) => (
+              <div className="scoreRow" key={s.label}>
+                <span className="scoreLabel">{s.label}</span>
+                <span className="scoreBar">
+                  <span
+                    className="scoreFill"
+                    style={{ width: `${(s.value / 10) * 100}%` }}
+                  />
+                </span>
+                <span className="scoreVal">{s.value}</span>
+              </div>
+            ))}
+          </div>
+          <p className="scoreNote">{scoresNote}</p>
+        </section>
+
+        <section>
+          <div className="sectionHeading">
+            <div>
+              <p className="sectionNumber">現在的大限</p>
+              <h2>兩人正走不同課題</h2>
+            </div>
+            <p>都在 22–31 歲</p>
+          </div>
+          <div className="decadeGrid">
+            {decades.map((d) => (
+              <article className="decadeCard" key={d.who}>
+                <h3>{d.who}</h3>
+                <p className="decadeRange">{d.range}</p>
+                <p>{d.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <div className="sectionHeading">
+            <div>
+              <p className="sectionNumber">相處地雷</p>
+              <h2>最容易傷到對方的方式</h2>
+            </div>
+            <p>先認得，才躲得開</p>
+          </div>
+          <div className="decadeGrid">
+            {dangers.map((d) => (
+              <article className="dangerCard" key={d.who}>
+                <span className="dangerWho">{d.who}</span>
+                <h3>{d.title}</h3>
+                <p>{d.text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="ruleBox">
+            <h3>{conflict.title}</h3>
+            <p>{conflict.text}</p>
+          </div>
+        </section>
+
+        <section>
+          <div className="sectionHeading">
+            <div>
+              <p className="sectionNumber">各要給對方</p>
+              <h2>三件東西</h2>
+            </div>
+            <p>做到，信任就長出來</p>
+          </div>
+          <div className="decadeGrid">
+            {gives.map((g) => (
+              <article className="giveCard" key={g.who}>
+                <h3>{g.who}</h3>
+                <ul>
+                  {g.items.map(([k, v]) => (
+                    <li key={k}>
+                      <strong>{k}</strong>
+                      {v}
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
@@ -71,6 +175,7 @@ export default function CouplePage() {
           <div className="summaryLabel">合盤結論</div>
           <h2>{verdict.title}</h2>
           <p>{verdict.text}</p>
+          <blockquote className="cpQuote">「{quote}」</blockquote>
         </section>
 
         <p className="disclaimer">
