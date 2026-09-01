@@ -1,0 +1,88 @@
+/* 共用：概念卡片格線（十二宮 / 十四主星 / 術語） */
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.cardGrid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.infoCard {
+  background: #fff;
+  border-top: 4px solid var(--black);
+  padding: 24px;
+}
+
+.infoCard .cardHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.infoCard h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.infoCard .cardTag {
+  font-size: 12px;
+  color: var(--gray);
+  white-space: nowrap;
+}
+
+.infoCard .cardKw {
+  margin: 0 0 12px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.infoCard p.cardDesc {
+  margin: 0;
+  color: #555;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* 亮度小表 */
+.brightRow {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.brightRow:last-child {
+  border-bottom: none;
+}
+
+.brightRow strong {
+  color: var(--purple-dark);
+}
+
+.brightRow span {
+  color: #555;
+}
+
+@media (max-width: 900px) {
+  .cardGrid,
+  .cardGrid.two {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .cardGrid,
+  .cardGrid.two {
+    grid-template-columns: 1fr;
+  }
+  .brightRow {
+    grid-template-columns: 90px 1fr;
+    gap: 10px;
+  }
+}

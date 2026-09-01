@@ -1,0 +1,21 @@
+@import './styles/theme.css';
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--black);
+  font-family: Inter, 'Noto Sans TC', 'PingFang TC', 'Microsoft JhengHei',
+    sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+#root {
+  min-height: 100vh;
+}

@@ -1,0 +1,173 @@
+.cpHero {
+  background: var(--purple);
+  color: #fff;
+  padding: 64px 24px;
+}
+
+.cpHeroInner {
+  width: min(1180px, 100%);
+  margin: auto;
+}
+
+.cpHero .eyebrow {
+  margin: 0 0 24px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  opacity: 0.7;
+}
+
+.cpNames {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: clamp(38px, 6vw, 68px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+}
+
+.cpHeart {
+  color: #ff8bbd;
+  font-size: 0.7em;
+}
+
+.cpSub {
+  margin: 20px 0 0;
+  font-size: clamp(16px, 2.4vw, 22px);
+  opacity: 0.85;
+}
+
+.lead {
+  margin: 0;
+  max-width: 860px;
+  font-size: 18px;
+  line-height: 2;
+  color: #444;
+}
+
+/* HIGHLIGHTS */
+.hlList {
+  display: grid;
+  gap: 12px;
+}
+
+.hlCard {
+  background: #fff;
+  padding: 26px 28px;
+  border-left: 5px solid var(--purple);
+}
+
+.hlCard.good {
+  border-left-color: #2e9e5b;
+}
+.hlCard.warn {
+  border-left-color: #d98324;
+}
+.hlCard.bad {
+  border-left-color: #b02a1f;
+}
+
+.hlTag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gray);
+  margin-bottom: 8px;
+}
+
+.hlCard.good .hlTag {
+  color: #2e9e5b;
+}
+.hlCard.warn .hlTag {
+  color: #d98324;
+}
+.hlCard.bad .hlTag {
+  color: #b02a1f;
+}
+
+.hlCard h3 {
+  margin: 0 0 10px;
+  font-size: 21px;
+}
+
+.hlCard p {
+  margin: 0;
+  color: #555;
+  line-height: 1.9;
+  font-size: 15px;
+}
+
+/* ADVICE */
+.adviceGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.adviceCard {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 16px;
+  background: #fff;
+  padding: 26px 28px;
+  border-top: 4px solid var(--black);
+}
+
+.adviceNo {
+  color: var(--purple);
+  font-weight: 800;
+}
+
+.adviceCard h3 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.adviceCard p {
+  margin: 0;
+  color: #555;
+  line-height: 1.85;
+  font-size: 15px;
+}
+
+/* VERDICT */
+.cpVerdict {
+  background: #151515;
+  color: #fff;
+  padding: 60px 64px;
+}
+
+.cpVerdict .summaryLabel {
+  color: #ff8bbd;
+  font-size: 12px;
+  letter-spacing: 0.15em;
+}
+
+.cpVerdict h2 {
+  margin: 24px 0;
+  max-width: 820px;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+}
+
+.cpVerdict p {
+  max-width: 760px;
+  color: #c6c6c6;
+  line-height: 1.95;
+}
+
+.disclaimer {
+  max-width: 860px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 720px) {
+  .adviceGrid {
+    grid-template-columns: 1fr;
+  }
+  .cpVerdict {
+    padding: 40px 24px;
+  }
+}

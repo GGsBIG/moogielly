@@ -1,0 +1,161 @@
+.chart {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  background: var(--white);
+  aspect-ratio: 1 / 1;
+}
+
+.chart .palace {
+  position: relative;
+  display: block;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 10px 10px 26px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+}
+
+.chart .palace:hover {
+  background: #faf6ff;
+}
+
+.chart .palace.active {
+  outline: 3px solid var(--purple);
+  outline-offset: -3px;
+  background: #fffbe6;
+}
+
+.stars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+}
+
+.star {
+  font-size: clamp(13px, 1.4vw, 17px);
+  font-weight: 700;
+  color: #b02a1f;
+}
+
+.star.minor {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: clamp(11px, 1.2vw, 13px);
+}
+
+.hua {
+  display: inline-block;
+  margin-left: 2px;
+  padding: 0 4px;
+  font-size: 11px;
+  color: #fff;
+  vertical-align: middle;
+}
+.hua.lu { background: #2e9e5b; }
+.hua.quan { background: #d98324; }
+.hua.ke { background: #2f6fd1; }
+.hua.ji { background: #b02a1f; }
+
+.palaceName {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 8px;
+  background: var(--purple);
+  color: #fff;
+  font-size: 12px;
+}
+
+.palaceName .zhi {
+  color: #d9c7f0;
+}
+
+.decadeTag {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 10px;
+  color: #9a7bbf;
+}
+
+.chartCenter {
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  background: var(--purple-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 6px;
+  padding: 20px;
+}
+
+.chartCenter h3 {
+  margin: 0;
+  color: var(--purple-dark);
+  font-size: 20px;
+}
+
+.chartCenter p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.centerHint {
+  color: var(--purple) !important;
+  font-weight: 700;
+}
+
+.chartHint {
+  margin: 14px 0 0;
+  color: var(--gray);
+  font-size: 13px;
+}
+
+.chartDetail {
+  margin-top: 20px;
+  background: #fff;
+  border-left: 4px solid var(--purple);
+  padding: 24px 28px;
+}
+
+.chartDetail h3 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+.detailKw {
+  margin: 0 0 14px;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.chartDetail p {
+  margin: 0;
+  line-height: 1.9;
+  color: #444;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .chart {
+    font-size: 10px;
+  }
+  .chart .palace {
+    padding: 5px 5px 20px;
+  }
+  .chartCenter {
+    padding: 8px;
+  }
+  .chartCenter p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,83 @@
+.huaGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  margin-top: 28px;
+}
+
+.huaCard {
+  background: #fff;
+  padding: 28px;
+  border-right: 1px solid var(--line);
+}
+
+.huaCard:last-child {
+  border-right: none;
+}
+
+.huaSym {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.huaSym.lu { background: #2e9e5b; }
+.huaSym.quan { background: #d98324; }
+.huaSym.ke { background: #2f6fd1; }
+.huaSym.ji { background: #b02a1f; }
+
+.huaCard strong {
+  display: block;
+  font-size: 21px;
+}
+
+.huaKw {
+  display: block;
+  margin: 6px 0 10px;
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.huaCard p {
+  margin: 0;
+  color: var(--gray);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.brightTable {
+  background: #fff;
+  padding: 8px 28px;
+  border: 1px solid var(--line);
+  margin-top: 28px;
+}
+
+.disclaimer {
+  max-width: 800px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .huaGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .huaCard:nth-child(2) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .huaGrid {
+    grid-template-columns: 1fr;
+  }
+  .huaCard {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+}

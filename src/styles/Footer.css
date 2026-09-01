@@ -1,0 +1,10 @@
+.siteFooter {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 28px 24px;
+  border-top: 1px solid var(--line);
+  color: var(--gray);
+  font-size: 13px;
+}

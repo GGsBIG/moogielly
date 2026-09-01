@@ -1,0 +1,119 @@
+.map {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  border: 1px solid var(--line);
+  background: var(--white);
+  aspect-ratio: 1 / 1;
+}
+
+.mapCell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  gap: 4px;
+  border: 1px solid var(--line);
+  background: transparent;
+  padding: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.mapCell:hover {
+  background: #faf6ff;
+}
+
+.mapCell.active {
+  background: var(--purple);
+  border-color: var(--purple);
+}
+
+.mapCell.active .mapName,
+.mapCell.active .mapKw {
+  color: #fff;
+}
+
+.mapName {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 700;
+  color: var(--black);
+}
+
+.mapKw {
+  font-size: 12px;
+  color: var(--gray);
+}
+
+.mapCenter {
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+  background: var(--purple-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  gap: 8px;
+  padding: 20px;
+}
+
+.mapCenter h3 {
+  margin: 0;
+  color: var(--purple-dark);
+  font-size: clamp(16px, 2vw, 22px);
+}
+
+.mapCenter p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.mapHint {
+  color: var(--purple) !important;
+  font-weight: 700;
+}
+
+.mapDetail {
+  margin-top: 20px;
+  background: #fff;
+  border-left: 4px solid var(--purple);
+  padding: 24px 28px;
+}
+
+.mapDetail h3 {
+  margin: 0 0 4px;
+  font-size: 24px;
+}
+
+.mapDetailKw {
+  margin: 0 0 14px;
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.mapDetail p {
+  margin: 0;
+  line-height: 1.9;
+  color: #444;
+  font-size: 15px;
+}
+
+@media (max-width: 600px) {
+  .mapCell {
+    padding: 8px;
+  }
+  .mapName {
+    font-size: 14px;
+  }
+  .mapKw {
+    display: none;
+  }
+  .mapCenter {
+    padding: 10px;
+  }
+  .mapCenter p {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,52 @@
+.app {
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1180px, calc(100% - 40px));
+  margin: auto;
+  padding: 80px 0;
+}
+
+section {
+  margin-bottom: 90px;
+}
+
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  margin-bottom: 28px;
+}
+
+.sectionHeading h2 {
+  margin: 3px 0 0;
+  font-size: 32px;
+}
+
+.sectionHeading > p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.sectionNumber {
+  margin: 0;
+  color: var(--purple);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+@media (max-width: 600px) {
+  .container {
+    width: min(100% - 24px, 1180px);
+    padding-top: 50px;
+  }
+  .sectionHeading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+}

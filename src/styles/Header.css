@@ -1,0 +1,132 @@
+.siteHeader {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.headerBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 24px;
+}
+
+.brand {
+  font-weight: 800;
+  font-size: 16px;
+  color: var(--purple-dark);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.brandMark {
+  color: var(--purple);
+}
+
+.siteNav {
+  display: flex;
+  gap: 6px;
+  padding: 0 24px 14px;
+}
+
+.siteNav a {
+  padding: 8px 14px;
+  font-size: 14px;
+  color: var(--gray);
+  text-decoration: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.siteNav a:hover {
+  color: var(--purple);
+}
+
+.siteNav a.active {
+  background: var(--purple);
+  color: #fff;
+}
+
+/* 漢堡按鈕：桌機隱藏 */
+.navToggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  place-items: center;
+}
+
+.burger,
+.burger::before,
+.burger::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--purple-dark);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.burger {
+  position: relative;
+}
+
+.burger::before,
+.burger::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+
+.burger::before {
+  top: -6px;
+}
+.burger::after {
+  top: 6px;
+}
+
+.burger.isOpen {
+  background: transparent;
+}
+.burger.isOpen::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.burger.isOpen::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* 手機：導覽收合，用伸縮展開 */
+@media (max-width: 720px) {
+  .headerBar {
+    padding: 12px 16px;
+  }
+  .navToggle {
+    display: grid;
+  }
+  .siteNav {
+    flex-direction: column;
+    gap: 4px;
+    padding: 0 16px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+  }
+  .siteNav.open {
+    max-height: calc(100vh - 64px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 16px 16px;
+  }
+  .siteNav a {
+    padding: 12px 14px;
+    border-color: var(--line);
+  }
+}

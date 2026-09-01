@@ -1,0 +1,169 @@
+.hero {
+  background: var(--purple);
+  color: white;
+  padding: 72px 24px;
+}
+
+.heroInner {
+  width: min(1180px, 100%);
+  margin: auto;
+}
+
+.eyebrow {
+  margin: 0 0 28px;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  opacity: 0.7;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: clamp(40px, 6vw, 76px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.birth {
+  margin-top: 18px;
+  opacity: 0.75;
+  font-size: 16px;
+}
+
+.heroTag {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 10px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.heroSummary {
+  width: min(760px, 100%);
+  margin: 56px 0 28px;
+  font-size: clamp(20px, 3vw, 30px);
+  line-height: 1.55;
+  font-weight: 600;
+}
+
+.keywords {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.keywords span {
+  padding: 9px 14px;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 13px;
+}
+
+.lead {
+  margin: 0;
+  max-width: 820px;
+  font-size: 18px;
+  line-height: 2;
+  color: #444;
+}
+
+/* STEPS */
+.stepList {
+  display: grid;
+  gap: 12px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  align-items: start;
+  background: #fff;
+  padding: 24px 28px;
+  border-left: 4px solid var(--purple);
+}
+
+.stepNo {
+  color: var(--purple);
+  font-weight: 800;
+  font-size: 18px;
+}
+
+.step h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+}
+
+.step p {
+  margin: 0;
+  color: #555;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* NAV CARDS */
+.navGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.navCard {
+  position: relative;
+  background: #fff;
+  border-top: 4px solid var(--black);
+  padding: 28px 24px 48px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navCard:hover {
+  border-top-color: var(--purple);
+}
+
+.navCard h3 {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+
+.navCard p {
+  margin: 0;
+  color: var(--gray);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.navArrow {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  color: var(--purple);
+  font-size: 22px;
+}
+
+@media (max-width: 900px) {
+  .navGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 50px 20px;
+  }
+  .titleRow {
+    flex-direction: column;
+  }
+  .heroSummary {
+    margin-top: 40px;
+  }
+  .step {
+    grid-template-columns: 44px 1fr;
+    gap: 12px;
+    padding: 20px;
+  }
+}
