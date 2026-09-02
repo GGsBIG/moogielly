@@ -9,6 +9,7 @@ const links = [
   ['/terms', '四化・術語'],
   ['/linyan', '林晏命盤'],
   ['/jiasong', '田家菘命盤'],
+  ['/shiyuyan', '施郁嫣命盤'],
   ['/couple', '兩人合盤'],
 ]
 

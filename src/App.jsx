@@ -9,6 +9,7 @@ import TermsPage from './pages/TermsPage'
 import LinYanPage from './pages/LinYanPage'
 import JiaSongPage from './pages/JiaSongPage'
 import CouplePage from './pages/CouplePage'
+import ShiYuYanPage from './pages/ShiYuYanPage'
 import './styles/App.css'
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="/terms" element={<TermsPage />} />
         <Route path="/linyan" element={<LinYanPage />} />
         <Route path="/jiasong" element={<JiaSongPage />} />
+        <Route path="/shiyuyan" element={<ShiYuYanPage />} />
         <Route path="/couple" element={<CouplePage />} />
       </Routes>
       <Footer />
